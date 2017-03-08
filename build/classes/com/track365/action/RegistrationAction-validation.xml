@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE validators PUBLIC 
+   "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+   "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+   
+   <validators>
+   		
+   			<field name="FirstName">
+   				<field-validator type="requiredstring">
+   					<param name="trim">true</param>
+                	<message>FirstName is required.</message>
+                </field-validator>
+   			</field>
+   			
+   			<field name="LastName">
+   				<field-validator type="requiredstring">
+   					<param name="trim">true</param>
+   					<message>LastName is required.</message>
+   				</field-validator>
+   			</field>
+   				
+   			<field name="Email">
+   				<field-validator type="requiredstring">
+   					<param name="trim">true</param>
+   					<message>Email is required.</message>
+   				</field-validator>
+   				<field-validator type="email">
+   					<param name="trim">true</param>
+   					<message>Enter valid Email.</message>
+   				</field-validator>
+   			</field>
+   			
+   			<field name="Password">
+   				<field-validator type="requiredstring">
+   					<param name="trim">true</param>
+   					<message>Password is required.</message>
+   				</field-validator>
+   				<field-validator type="stringlength" >
+   					<param name="minLength">6</param>
+   					<param name="trim">true</param>
+   					<message>Password should be more than 6 characters.</message>
+   				</field-validator>
+   			</field>
+   			
+			<field name="ConfirmPassword">
+   				<field-validator type="requiredstring">
+   					<param name="trim">true</param>
+   					<message>Confirm Password is required.</message>
+   				</field-validator>
+   			</field>
+   			
+   			
+			
+   			
+   			
+   			
+   </validators>

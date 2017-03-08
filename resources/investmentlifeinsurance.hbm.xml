@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.track365.hibernate.InvestmentLifeInsurance" table="investment_li">
+
+		<id name="Id" column="id">
+			<generator class="increment">
+			</generator>
+		</id>
+
+		<property name="UserId">
+			<column name="user_id"></column>
+		</property>
+	
+		<property name="CompanyName">
+			<column name="company_name"></column>
+		</property>
+		
+		<property name="PlanCode">
+			<column name="plan_code"></column>
+		</property>
+		
+		<property name="BuyDate">
+			<column name="buy_date"></column>
+		</property>
+		
+		<property name="EndDate">
+			<column name="end_date"></column>
+		</property>
+		
+		<property name="PayPeriod">
+			<column name="pay_period"></column>
+		</property>
+		
+		<property name="Premium">
+			<column name="premium"></column>
+		</property>
+		
+		<property name="Description">
+			<column name="description"></column>
+		</property>
+			
+	</class>
+
+</hibernate-mapping>

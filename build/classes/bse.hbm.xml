@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.track365.hibernate.BSE" table="bse">
+	
+		<id name="ID" column="ID">
+			<generator class="assigned"></generator>
+		</id>
+		
+		<property name="BseCode" unique-key="true">
+			<column name="bse_code" not-null="true" />
+		</property>
+		
+		<property name="BseName">
+			<column name="bse_name" not-null="true" />
+		</property>
+		
+		<property name="BseGroup">
+			<column name="bse_group" not-null="true" />
+		</property>
+		
+		</class>
+	
+	
+	
+</hibernate-mapping>

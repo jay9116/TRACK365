@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE validators PUBLIC 
+   "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+   "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="CompanyName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Company Name is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="PlanCode">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Plan Code is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="BuyDate">
+		<field-validator type="date">
+			<param name="trim">true</param>
+			<message>Select Buying Date</message>
+		</field-validator>
+	</field>
+	<field name="EndDate">
+		<field-validator type="date">
+			<param name="trim">true</param>
+			<message>Select Ending Date</message>
+		</field-validator>
+	</field>
+
+	<field name="PayPeriod">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Paying Period is required.</message>
+		</field-validator>
+	</field>
+
+
+
+</validators>

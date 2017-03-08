@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.track365.hibernate.User" table="user">
+	
+		<id name="Id" type="int" column="id">
+			<generator class="increment" />
+		</id>
+		
+		<property name="Email" unique-key="true">
+			<column name="email" not-null="true" />
+		</property>
+		
+		<property name="Password">
+			<column name="password" not-null="true" />
+		</property>
+		
+		<property name="FirstName">
+			<column name="first_name" not-null="true" />
+		</property>
+		
+		<property name="LastName">
+			<column name="last_name" not-null="true" />
+		</property>
+		
+		<property name="VerificationNumber">
+			<column name="validation_number" not-null="true" />
+		</property>
+		
+		<property name="Status">
+			<column name="status" not-null="true" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.track365.hibernate.Status</param>
+			</type>
+		</property>
+		
+		<property name="Isverified">
+			<column name="isverified" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.track365.hibernate.Isverified</param>
+			</type>
+		</property>
+		
+		<one-to-one name="userinfo" class="com.track365.hibernate.UserInfo" cascade="save-update"/>
+	</class>
+	
+	
+	
+</hibernate-mapping>

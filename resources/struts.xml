@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="default" extends="struts-default" namespace="/">
+
+		<action name="">
+			<result>/WEB-INF/webpages/index.jsp</result>
+		</action>
+
+		<action name="icon">
+			<result>/WEB-INF/webpages/favicon.ico</result>
+		</action>
+
+		<action name="index">
+			<result>/WEB-INF/webpages/index.jsp</result>
+		</action>
+
+		<action name="register">
+			<result>/WEB-INF/webpages/registration.jsp</result>
+		</action>
+
+		<action name="home">
+			<result>/WEB-INF/webpages/home.jsp</result>
+		</action>
+
+		<action name="changepass">
+			<result>/WEB-INF/webpages/changepassword.jsp </result>
+		</action>
+
+		<action name="getinvestment">
+			<result>/WEB-INF/webpages/investment.jsp</result>
+		</action>
+
+		<action name="viewsharemarket">
+			<result type="chain">viewsharerecord </result>
+		</action>
+
+
+
+		<action name="getprofile" class="com.track365.action.GetProfileAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/profile.jsp</result>
+			<result name="error">/WEB-INF/webpages/home.jsp</result>
+		</action>
+
+		<action name="editprofile" class="com.track365.action.EditProfileAction"
+			method="execute">
+			<result name="success"> /WEB-INF/webpages/editprofile.jsp</result>
+		</action>
+
+		<action name="updateprofile" class="com.track365.action.UpdateProfileAction"
+			method="execute">
+			<result type="chain">getprofile</result>
+		</action>
+
+
+
+		<action name="login" class="com.track365.action.LoginAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/home.jsp</result>
+			<result name="input">/WEB-INF/webpages/index.jsp </result>
+			<result name="error">/WEB-INF/webpages/index.jsp </result>
+			<result name="verify">/WEB-INF/webpages/verify.jsp</result>
+		</action>
+
+		<action name="registration" class="com.track365.action.RegistrationAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/verify.jsp </result>
+			<result name="error">/WEB-INF/webpages/registration.jsp</result>
+			<result name="input">/WEB-INF/webpages/registration.jsp</result>
+			<result name="loginerror">/WEB-INF/webpages/loginerror.jsp</result>
+		</action>
+
+		<action name="verify" class="com.track365.action.VerifyAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/home.jsp</result>
+			<result name="input">/WEB-INF/webpages/verify.jsp </result>
+			<result name="loginerror">/WEB-INF/webpages/loginerror.jsp</result>
+		</action>
+
+		<action name="logout" class="com.track365.action.LogoutAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/index.jsp </result>
+		</action>
+
+		<action name="changepassword" class="com.track365.action.ChangePasswordAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/changepassword.jsp</result>
+			<result name="input">/WEB-INF/webpages/changepassword.jsp</result>
+			<result name="error">/WEB-INF/webpages/changepassword.jsp </result>
+		</action>
+
+
+
+		<action name="addsharerecord" class="com.track365.action.AddShareRecordAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/addsharemarket.jsp</result>
+		</action>
+
+		<action name="viewsharerecord" class="com.track365.action.ViewShareRecordAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/viewsharemarket.jsp</result>
+		</action>
+
+		<action name="editsharerecord" class="com.track365.action.EditShareRecordAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/editsharemarket.jsp</result>
+		</action>
+
+
+		<action name="deletesharerecord" class="com.track365.action.DeleteShareRecordAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/deletesharemarket.jsp</result>
+		</action>
+
+
+		<action name="addsm" class="com.track365.action.AddSMAction"
+			method="execute">
+			<result name="success" type="chain">viewsharerecord</result>
+			<result name="input">/WEB-INF/webpages/addsharemarket.jsp</result>
+		</action>
+
+		<action name="addeditedsm" class="com.track365.action.AddSMAction"
+			method="addeditsm">
+			<result name="success" type="chain">viewsharerecord</result>
+			<result name="input">/WEB-INF/webpages/editsharerecord.jsp</result>
+		</action>
+
+		<action name="editsm" class="com.track365.action.EditSMAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/editsharerecord.jsp</result>
+
+		</action>
+
+		<action name="deletesm" class="com.track365.action.DeleteSMAction"
+			method="execute">
+			<result name="success" type="chain"> deletesharerecord</result>
+		</action>
+
+
+
+		<action name="viewmutualfund" class="com.track365.action.ViewMutualFundAction"
+			method="execute">
+			<result>/WEB-INF/webpages/viewmutualfund.jsp</result>
+		</action>
+		<action name="addmutualfund">
+			<result>/WEB-INF/webpages/addmutualfund.jsp</result>
+		</action>
+		<action name="addmf" class="com.track365.action.AddMFAction"
+			method="execute">
+			<result name="success" type="chain">viewmutualfund</result>
+			<result name="input">/WEB-INF/webpages/addmutualfund.jsp</result>
+		</action>
+		<action name="deletemutualfund" class="com.track365.action.DeleteMutualFundAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/deletemutualfund.jsp</result>
+
+		</action>
+		<action name="deletemf" class="com.track365.action.DeleteMFAction"
+			method="execute">
+			<result name="success" type="chain"> deletemutualfund </result>
+		</action>
+		<action name="editmutualfund" class="com.track365.action.EditMutualFundAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/editmutualfund.jsp</result>
+			<result name="input">/WEB-INF/webpages/editmf.jsp</result>
+		</action>
+		<action name="editmf" class="com.track365.action.EditMFAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/editmf.jsp</result>
+			<result name="input">/WEB-INF/webpages/editmf.jsp</result>
+
+		</action>
+		<action name="addeditedmf" class="com.track365.action.AddMFAction"
+			method="addeditmf">
+			<result name="success" type="chain"> viewmutualfund </result>
+			<result name="input">/WEB-INF/webpages/editmf.jsp</result>
+		</action>
+
+
+		<action name="addlifeinsurancerecord" class="com.track365.action.AddLifeInsuranceRecordAction"
+			method="execute">
+			<result name="success" type="chain"> viewlifeinsurance </result>
+			<result name="input">/WEB-INF/webpages/addlifeinsurance.jsp</result>
+
+		</action>
+		<action name="viewlifeinsurance"
+			class="com.track365.action.ViewLifeInsuranceRecordAction" method="execute">
+			<result>/WEB-INF/webpages/viewlifeinsurance.jsp</result>
+		</action>
+		<action name="addlifeinsurance">
+			<result>/WEB-INF/webpages/addlifeinsurance.jsp</result>
+		</action>
+		<action name="editlifeinsurance" class="com.track365.action.EditLifeInsuranceAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/editlifeinsurance.jsp</result>
+
+		</action>
+		<action name="editli" class="com.track365.action.EditLIAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/editli.jsp</result>
+
+
+		</action>
+		<action name="addeditedli" class="com.track365.action.AddLifeInsuranceRecordAction"
+			method="addeditli">
+			<result name="success" type="chain"> viewlifeinsurance </result>
+			<result name="input">/WEB-INF/webpages/editli.jsp</result>
+		</action>
+
+		<action name="deletelifeinsurance" class="com.track365.action.DeleteLifeInsuranceAction"
+			method="execute">
+			<result name="success">/WEB-INF/webpages/deletelifeinsurance.jsp
+			</result>
+		</action>
+		<action name="deleteli" class="com.track365.action.DeleteLIAction"
+			method="execute">
+			<result name="success" type="chain"> deletelifeinsurance </result>
+		</action>
+
+	</package>
+</struts>

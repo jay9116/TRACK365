@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.track365.hibernate.UserInfo" table="user_info">
+
+		<id name="Id" column="user_id">
+			<generator class="foreign">
+				<param name="property">user</param>
+			</generator>
+		</id>
+
+		<one-to-one name="user" class="com.track365.hibernate.User"
+			constrained="true" />
+
+		<property name="BirthDate">
+			<column name="birthdate" not-null="true" />
+		</property>
+
+		<property name="Gender">
+			<column name="gender" not-null="true" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.track365.hibernate.Gender</param>
+			</type>
+		</property>
+
+		<property name="DrivingLicence">
+			<column name="driving_licence" not-null="false" />
+		</property>
+
+		<property name="PanCard">
+			<column name="pan_card" not-null="false" />
+		</property>
+
+		<property name="ElectionCard">
+			<column name="election_card" not-null="false" />
+		</property>
+
+		<property name="AadharCard">
+			<column name="aadhar_card" not-null="false" />
+		</property>
+
+		<property name="RationCard">
+			<column name="ration_card" not-null="false" />
+		</property>
+
+	</class>
+
+</hibernate-mapping>

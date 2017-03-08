@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.track365.hibernate.InvestmentMutualFund" table="investment_mf">
+
+		<id name="Id" column="id">
+			<generator class="increment">
+			</generator>
+		</id>
+
+		<property name="UserId">
+			<column name="user_id"></column>
+		</property>
+	
+		<property name="CompanyName">
+			<column name="company_name"></column>
+		</property>
+		
+		<property name="SchemeName">
+			<column name="scheme_name"></column>
+		</property>
+		
+		<property name="SchemeClass">
+			<column name="scheme_class"></column>
+		</property>
+		
+		<property name="SchemeType">
+			<column name="scheme_type"></column>
+		</property>
+		
+		<property name="SchemeCode">
+			<column name="scheme_code"></column>
+		</property>
+		
+		<property name="PlanType">
+			<column name="plan_type"></column>
+		</property>
+		
+		<property name="BuyDate">
+			<column name="buy_date"></column>
+		</property>
+		
+		<property name="Description">
+			<column name="description"></column>
+		</property>
+		
+	
+			
+	</class>
+
+</hibernate-mapping>
